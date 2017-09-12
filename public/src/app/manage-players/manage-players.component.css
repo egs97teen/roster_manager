@@ -1,0 +1,9 @@
+div {
+	width: 970px;
+	margin: 0 auto;
+}
+
+ul li {
+	list-style: none;
+	display: inline-block;
+}

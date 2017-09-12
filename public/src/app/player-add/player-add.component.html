@@ -1,0 +1,19 @@
+<form (submit)="newPlayer(); formData.reset()" #formData="ngForm">
+	<label for="name"><input
+		type="text"
+		name="name"
+		[(ngModel)]="player.name"
+		required
+		minlength="2"
+		#name="ngModel">
+	<p *ngIf="name.touched">
+      <span class="error" *ngIf="player.errors?.minlength">Name must be at least 2 characters long.</span>
+      <span class="error" *ngIf="player.errors?.required">Name is required.</span></p></label>
+    <label for="position"><input 
+    	type="text"
+    	name="position"
+    	[(ngModel)]="player.position"
+    	#position="ngModel">
+    </label>
+	<input type="submit" value="Add Player" [disabled]="!formData.valid">
+</form>
